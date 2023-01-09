@@ -14,7 +14,7 @@ Use npm start to run server and deploy via Heroku.
 ## Sources
 STU Activity #22 Modular Routing
 
-## Links and Screenshots
+## Links
 
 GitHub repo: https://github.com/laps22/note-taker
 
