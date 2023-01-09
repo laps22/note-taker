@@ -18,4 +18,4 @@ STU Activity #22 Modular Routing
 
 GitHub repo: https://github.com/laps22/note-taker
 
-Heroku URL:
+Heroku URL: https://liannotetaker.herokuapp.com/
