@@ -14,14 +14,15 @@ app.use(express.static('public'));
 app.use('/api', api);
 
 
-// GET index HTML routes
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/assets/index.html'))
-);
 
 // GET Route for notes page
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, './assets/notes.html'))
+res.sendFile(path.join(__dirname, './public/notes.html'))
+);
+
+// GET index HTML routes
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
 app.listen(PORT, () =>

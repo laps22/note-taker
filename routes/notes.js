@@ -1,23 +1,24 @@
-const notes = require('express').Router();
+const note = require('express').Router();
+const { title } = require('process');
 const { readFromFile, readAndAppend } = require('../helpers/fs');
 const uuid = require('../helpers/uuid');
 
 // GET Route to read the notes
-notes.get('/', (req, res) => {
+note.get('/', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // POST Route to receive new note to save
-notes.post('/', (req, res) => {
+note.post('/', (req, res) => {
   console.log(req.body);
 
-  const { username, topic, tip } = req.body;
+  const {title, text} =  req.body
 
   if (req.body) {
     const newNote = {
      title,
      text,
-      note_id: uuid(),
+    id: uuid(),
     };
 
     readAndAppend(newNote, './db/db.json');
@@ -27,4 +28,4 @@ notes.post('/', (req, res) => {
   }
 });
 
-module.exports = notes;
+module.exports = note;
